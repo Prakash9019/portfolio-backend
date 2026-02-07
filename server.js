@@ -7,7 +7,14 @@ const stockRoutes = require('./routes/stockRoutes');
 dotenv.config();
 const app = express();
 
-app.use(cors(['https://client-zeta-three-67.vercel.app', 'http://localhost:5173']));
+app.use(cors({
+  origin: [
+    'https://client-zeta-three-67.vercel.app',
+    'http://localhost:5173'
+  ],
+  methods: ['GET','POST','PUT','DELETE'],
+  credentials: true
+}));
 app.use(express.json());
 
 mongoose.connect(process.env.MONGO_URI)
