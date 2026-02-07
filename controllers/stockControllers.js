@@ -1,4 +1,4 @@
-const Stock = require('../models/Stock');
+const Stock = require('../models/stock');
 const YahooFinance = require('yahoo-finance2').default;
 const yahooFinance = new YahooFinance({ suppressNotices: ['yahooSurvey'] });
 
